@@ -1,0 +1,227 @@
+body{
+    background: black; 
+    color: white;
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+nav{
+    max-width:100vw;
+    box-shadow: 1px 2px 5px gray;
+    height: 8vh;
+    box-sizing: border-box;
+    padding: 5px;
+    display: flex;
+    justify-content: space-between;
+}
+ul{
+    font-family:sans-serif  ;
+    font-weight: 420;
+    height: 100%;
+    width: 45vw;
+    padding-left: 2vw;
+    align-items: center;
+    display: flex;
+    gap: 3vw;
+}
+ul>li,#listdiv img{
+    list-style: none;
+    cursor: pointer;
+}
+#listdiv{
+    border: 2px solid black;
+    border-radius: 40px;
+    background: #252525;
+    padding: 3px;
+    box-shadow: 1px 1px 3px gray,-1px -1px px gray;
+    padding-inline: 10px;
+    display: flex;
+    box-sizing: border-box;
+    gap: 10px;
+    align-items: center;
+}
+#listdiv>p{
+    font-size: 30px;
+    margin-bottom: 5px;
+}
+#listdiv>input,
+#listdiv>input:visited {
+    color: white;
+    border: none;
+    background: transparent;
+    outline: none;
+    font-size: 15px;
+    height: 25px;
+    width: 20vw;
+}
+#listdiv:hover{
+    border: 2px solid rgb(56, 180, 143);
+}
+img{
+    height: 25px;
+}
+li>img,#listdiv img,.library p img,.library img{
+filter: invert(54%) sepia(68%) saturate(499%) hue-rotate(110deg) brightness(99%) contrast(99%);
+    z-index: 1;
+}
+#sideul button:hover{
+    transform: scale(1.05);
+    color: white;
+    transition: all 200ms ease-in;
+}
+#sideul div li:hover,#sideul li:hover{
+    transform: scale(1.1);
+    color: white;
+    transition: all 200ms ease-in;
+}
+#sideul{
+    width: 46vw;
+}
+#sideul div{
+    display: flex;
+    gap: 1.2vw;
+}
+#sideul li{
+    color: rgb(170, 167, 167);
+}
+#sideul div li{
+    list-style: none;
+    cursor: pointer;
+    font-weight: bold;
+    color: rgb(170, 167, 167);
+}
+ul button{
+    padding: 15px;
+    width: 100px;
+    background: rgb(69, 187, 151);
+    border-radius: 50px;
+    font-size: 1rem;
+    border: none;
+    font-weight: bolder;
+    cursor: pointer;
+}
+#Install{
+    display: flex;
+    align-items: center;
+    gap: 0.5vw;
+    color: rgb(170, 167, 167);
+    width:110px;
+}
+
+/* left section starts  */
+.containor{
+    max-width: 100vw;
+    padding-top: 1.5vh;
+    display: flex;
+    height: 90vh;
+    justify-content: center;
+    gap: 1vw;
+    margin: auto;
+}
+.containor div{
+    padding: 1rem;
+}
+.left{
+    background: #252525;
+    border-radius: 10px;
+    font-family: sans-serif;
+    width: 24vw;
+}
+.right{
+    border-radius: 10px;
+    background: #252525;
+    width: 74vw;
+}
+
+/* left section */
+.library p{
+    display: flex;
+    align-items: center;
+    gap:1vw;
+    color: rgb(170, 167, 167);
+    font-weight:bold;
+}
+.library{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 4vh;
+}
+#playlist{
+    display: grid;
+    height: 40vh;
+    grid-template-columns: 1fr;
+    overflow:auto;
+    gap: 1vh;
+    margin: 0;
+    padding: 0;
+}
+#create,#podcast{
+    border: 1px solid black;
+    line-height: 2;
+    border-radius: 10px;
+    height: fit-content;
+    background: #393939;
+}
+#create button,#podcast button{
+    margin-top: 2vh;
+    background: rgb(69, 187, 151);
+    height: 4vh;
+    font-weight: bold;
+    width: 120px;
+    border: none;
+    border-radius: 50px;
+    padding: 5px;
+}
+#create button:hover,
+#podcast button:hover{
+    transform: scale(1.05);
+    transition: transform 100ms ease-in;
+}
+#podcast button{
+    width: 150px;
+}
+#create :nth-child(1),#podcast :nth-child(1){
+    font-weight: bold;
+}
+
+#footer{
+    margin-top: 5vh;
+    display: flex;
+    padding: 10px;
+    font-size: small;
+    flex-wrap: wrap;
+    line-height: 2;
+    gap: 0.5vw;
+}
+#footer p{
+    width: 100%;
+    display: flex;
+    gap: 1.4vw;
+}
+#fp2 {
+    width: 100%;
+    display: flex;
+    gap: 2vw;
+}
+a{
+    text-decoration: none;
+    color: rgb(170, 167, 167);
+}
+a:hover{
+    color: white;
+    transform: scale(1.05);
+    transition: all 100ms ease;
+    text-decoration: underline;
+}
+#lang{
+    display: flex;
+    align-items: center;
+    width: 100px;
+    margin-top: 5vh;
+    margin-left: 2vw;
+    background: rgb(69, 187, 151);
+    padding: 5px;
+    border: none;
+    border-radius: 50px;
+}
