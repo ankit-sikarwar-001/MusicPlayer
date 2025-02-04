@@ -119,19 +119,17 @@ ul button{
     gap: 1vw;
     margin: auto;
 }
-.containor div{
-    padding: 1rem;
-}
+
 .left{
+    resize: horizontal;
+    overflow-x: auto;
     background: #252525;
     border-radius: 10px;
     font-family: sans-serif;
     width: 24vw;
 }
-.right{
-    border-radius: 10px;
-    background: #252525;
-    width: 74vw;
+.left div , .left{
+    padding: 1rem;
 }
 
 /* left section */
@@ -224,4 +222,97 @@ a:hover{
     padding: 5px;
     border: none;
     border-radius: 50px;
+}
+
+/* right section starts here */
+.right{
+    border-radius: 10px;
+    padding: 1rem;
+    background: #252525;
+    width: 74vw;
+    overflow-y: scroll;
+}
+.artistCard{
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+.topline{
+    
+    display: flex;
+    margin-bottom: .5rem;
+    padding-inline: 1rem;
+    align-items: center;
+    justify-content: space-between;
+}
+#card1 div {
+    border-radius: 50%;
+    height: 140px;
+    margin-bottom: 1rem;
+    width: 140px;
+    overflow: hidden;
+}
+
+#card1>div img {
+    /* object-position: center; */
+    height: 100%;
+    object-fit: contain;
+}
+#card1{
+    padding: .5rem;
+    border-radius: 10px;
+    line-height: 1.3;
+    font-size: 1rem;
+}
+#card1 :last-child,#scard1 :last-child{
+    font-size: 0.9rem;
+    color: rgb(170, 167, 167);
+}
+#card1:hover,#scard1:hover{
+    background: linear-gradient(#252525, #2d2d2d);
+    transition: all 20s ease-in;
+}
+#para{
+    font-weight: bolder;
+}
+#para:hover{
+    text-decoration: underline;
+}
+.topline>h2:hover,.topline p:hover{
+    /* font-weight: bold; */
+    cursor: pointer;
+    text-decoration: underline;
+
+}
+#scard1 div {
+    /* border-radius: 50%; */
+    height: 120px;
+    margin-bottom: 1rem;
+    width: 120px;
+    overflow: hidden;
+}
+#rcard1 div {
+    border-radius: 10px;
+    height: 120px;
+    margin-bottom: 1rem;
+    width: 120px;
+    overflow: hidden;
+}
+
+#scard1>div img {
+    /* object-position: center; */
+    height: 100%;
+    object-fit: contain;
+}
+.songlist,.artists {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(7,1fr);
+}
+
+#scard1 {
+    padding: 1rem;
+    border-radius: 10px;
+    line-height: 1.3;
+    font-size: 1rem;
 }
