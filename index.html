@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="utility.css" />
     <title>Spotify Clone</title>
   </head>
@@ -171,33 +172,33 @@
             <p>Show all</p>
           </div>
           <div class="songlist">
-            <div id="scard1">
+            <div id="scard1" class="Aashiqui title">
+              <div class=" img">
+                <img src="https://i.scdn.co/image/ab67616d0000b2736404721c1943d5069f0805f3" alt="Ar rehman">
+              </div>
+              <p  id="para">Aashiqui 2 </p>
+              <p>Mithoon,Ankit Tiwari..</p>  
+              <div id="playbutton">
+                <img src="SVG/play.svg" alt="playbutton">
+              </div>
+            </div>
+            <!-- card2 -->
+            <div id="scard1" class="Glory title">
               <div class=" img">
               <img src="https://i.scdn.co/image/ab67616d0000b273aad3f4b601ae8763b3fc4e88" alt="Glory">
               </div>
-               <p id="para">Glory</p>
+               <p  id="para">Glory</p>
                 <p>Yo Yo Honey Singh</p>  
                 <div id="playbutton">
                   <img src="SVG/play.svg" alt="playbutton">
                 </div>
             </div>
-            <!-- card2 -->
-             <div id="scard1">
-              <div class=" img">
-              <img src="https://i.scdn.co/image/ab67616d0000b2736404721c1943d5069f0805f3" alt="Ar rehman">
-              </div>
-               <p id="para">Ashiqui 2 </p>
-                <p>Mithoon,Ankit Tiwari..</p>  
-                <div id="playbutton">
-                  <img src="SVG/play.svg" alt="playbutton">
-                </div>
-            </div>
             <!-- card3 -->
-             <div id="scard1">
+             <div id="scard1" class="Yeh_Jawani_Hai title">
               <div class=" img">
               <img src="https://i.scdn.co/image/ab67616d0000b273707ea5b8023ac77d31756ed4" alt="Anirudh">
               </div>
-               <p id="para">Yeh Jawani Hai Diwani</p>
+               <p  id="para">Yeh Jawani Hai Diwani</p>
                 <p>Pritam</p>  
                 <div id="playbutton">
                   <img src="SVG/play.svg" alt="playbutton">
@@ -463,7 +464,17 @@
           </div>
         </div>
         <!-- end -->
+        </div>
+        <div class="player">
+          <div class="controls" id="controller">
+            <i id="prev" class="fa-solid fa-backward-step"></i>
+            <i id="play" class="fa-solid fa-play"></i>
+            <i id="pause" class="fa-solid fa-circle-pause"></i>
+            <i id="next" class="fa-solid fa-forward-step"></i>
+          </div>
+        </div>
       </div>
+
     </div>
     <script src="script.js"></script>
   </body>

@@ -61,7 +61,7 @@ ul>li,#listdiv img{
 img{
     height: 25px;
 }
-li>img,#listdiv img,.library p img,.library img{
+li>img,#listdiv img,.library p img,.library img,i{
 filter: invert(54%) sepia(68%) saturate(499%) hue-rotate(110deg) brightness(99%) contrast(99%);
     z-index: 1;
 }
@@ -226,6 +226,7 @@ a:hover{
 
 /* right section starts here */
 .right{
+    position: relative;
     border-radius: 10px;
     padding: 1rem;
     background: #252525;
@@ -337,4 +338,34 @@ a:hover{
 }
 #scard1:hover #playbutton,#card1:hover #playbutton{
     display: flex;
+}
+.player{
+    width: 70%;
+    height: 60px;
+    background: #afe0d5;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    bottom: 10px;
+    /* right: 10px; */
+    left: 28vw; 
+    z-index: 1;
+}
+.controls{
+    width: 12%;
+    display: flex;
+    height: 30px;
+    justify-content: space-between;
+    align-items: center;
+}
+i{
+    padding: 10px;
+    cursor: pointer;
+    font-size: larger;
+}
+#pause{
+    display: none;
+    font-size: x-large;
 }
