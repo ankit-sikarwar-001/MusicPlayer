@@ -272,7 +272,7 @@ a:hover{
 }
 #card1:hover,#scard1:hover{
     background: linear-gradient(#252525, #2d2d2d);
-    transition: all 20s ease-in;
+    /* transition: all 20s ease-in; */
 }
 #para{
     font-weight: bolder;
@@ -331,7 +331,8 @@ a:hover{
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    background: rgb(49, 220, 63);
+    /* background: rgb(49, 220, 63); */
+    background: #0cf5ab;
 }
 #playbutton img{
     width: 70%;
