@@ -76,7 +76,7 @@ filter: invert(54%) sepia(68%) saturate(499%) hue-rotate(110deg) brightness(99%)
     transition: all 200ms ease-in;
 }
 #sideul{
-    width: 46vw;
+    max-width: 35vw;
 }
 #sideul div{
     display: flex;
@@ -331,7 +331,6 @@ a:hover{
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    /* background: rgb(49, 220, 63); */
     background: #0cf5ab;
 }
 #playbutton img{
@@ -341,7 +340,7 @@ a:hover{
     display: flex;
 }
 .player{
-    width: 70%;
+    width: 70vw;
     height: 50px;
     background: #afe0d5;
     border-radius: 10px;
@@ -350,10 +349,8 @@ a:hover{
     /* gap: 5px; */
     grid-template-rows: 1fr 1fr;
     position: fixed;
-    bottom: 10px;
-    /* right: 10px; */
-    left: 28vw; 
-    z-index: 1;
+    top: 92vh;
+    right: 1.5vw; 
 }
 .controls{
     width: 100%;
@@ -421,4 +418,18 @@ i{
     display: flex;
     align-items: center;
     color: rgb(41, 41, 41);
+}
+
+@media screen and (max-width :1100px) {
+    .left{
+        position: relative;
+        right: 70vw;
+    }
+    .right{
+        width: 100vw;
+    }
+    .player{
+        width: 85vw;
+        right: 7.5vw;
+    }
 }
