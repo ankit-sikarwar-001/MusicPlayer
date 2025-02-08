@@ -1,7 +1,28 @@
+let player = [];
+let block = 1;
 let pause = document.getElementById("pause");
 let play = document.getElementById("play");
 let prev = document.getElementById("prev");
 let next = document.getElementById("next");
+let index = parseInt(localStorage.getItem("index"));
+let songinfo = document.querySelector(".songInfo");
+let songTime = document.querySelector(".songTime");
+let circle = document.querySelector(".circle");
+let bar = document.querySelector(".color");
+let seekbar =document.querySelector(".seekbar");
+let perComplete ;
+// convert secconds into minute
+function convertSeconds(seconds) {
+  const minutes = Math.floor(seconds / 60);
+  const remainingSeconds = Math.floor(seconds) % 60;
+  
+  // Ensure two-digit formatting using padStart
+  const formattedMinutes = String(minutes).padStart(2, "0");
+  const formattedSeconds = String(remainingSeconds).padStart(2, "0");
+
+  return `${formattedMinutes}:${formattedSeconds}`;
+}
+
 
 async function getSongs() {
   let response = await fetch("http://127.0.0.1:5500/Songs/Popular_songs/");
@@ -21,21 +42,30 @@ async function getSongs() {
   localStorage.setItem("titles", titles);
   return songs;
 }
-// let value = 0;
-let player = [];
-// localStorage.setItem("index", value);
+// it will store the audio into player array
 async function main() {
   let glory = await getSongs();
   glory.forEach((element) => {
     element = new Audio(element);
     player.push(element);
   });
-  let block = 1;
+  
+  // seekbar.addEventListener("click",(e)=>{
+  //   perComplete = (e.offsetX / e.target.getBoundingClientRect().width) * 100;
+  //   bar.style.width= `${perComplete}%`
+  //   circle.style.left= `${perComplete}%`
+  //   player[index].currentTime = (perComplete*player[index].duration)/100
+  //   console.log((e.offsetX/e.target.getBoundingClientRect().width)*100);
+  // })
+  
   play.addEventListener("click", () => {
-    let index = localStorage.getItem("index");
+    let index = parseInt(localStorage.getItem("index"));
     pause.style.display = "block";
     play.style.display = "none";
     player[index].play();
+    songinfo.innerHTML  = player[index].src.split("/Popular_songs/")[1].replace(".mp3"," ")
+    console.log(player[index].duration, player[index].src, player[index].currentTime);
+    timer(index)
     block = 0;
   });
   pause.addEventListener("click", () => {
@@ -43,6 +73,7 @@ async function main() {
     pause.style.display = "none";
     play.style.display = "block";
     player[index].pause();
+    // timer(index)
     block = 1;
   });
   console.log(block);
@@ -53,14 +84,16 @@ async function main() {
       if (index == 0) index = player.length - 1;
       else index--;
       if (index >= 0) localStorage.setItem("index", index);
+      timer(index);
     }
   });
   next.addEventListener("click", () => {
+    let index = localStorage.getItem("index");
     if (block == 1) {
-      let index = localStorage.getItem("index");
       if (index == player.length - 1) index = 0;
       else index++;
       if (index < player.length) localStorage.setItem("index", index);
+      timer(index);
     }
   });
   let controller = document.getElementById("controller");
@@ -78,6 +111,14 @@ async function main() {
       if (title[i] === storedTitle[index]) {
         document.querySelector(`.${title[i]}`).style.background =
           "rgb(69, 187, 151)";
+          songinfo.innerHTML = document.querySelector(
+            `.${title[i]}`
+          ).children[1].innerHTML;
+          // player[i].addEventListener("timeupdate", () => {
+          //   let current = convertSeconds(player[i].currentTime);
+          //   let duration = convertSeconds(player[i].duration);
+          //   songTime.innerHTML = `${current} /${duration} `;
+          // });
       } else {
         document.querySelector(`.${title[i]}`).style.background = "";
       }
@@ -97,9 +138,14 @@ async function main() {
         if (title == storedTitle[i]) {
           document.querySelector(`.${storedTitle[i]}`).style.background =
             "rgb(69, 187, 151)";
+            songinfo.innerHTML = document.querySelector(
+              `.${storedTitle[i]}`
+            ).children[1].innerHTML;
+            
           console.log(storedTitle[i]);
           localStorage.setItem("index", i);
           playe();
+          timer(i);
           block = 0;
         } else {
           document.querySelector(`.${storedTitle[i]}`).style.background = "";
@@ -107,6 +153,25 @@ async function main() {
       }
     });
   });
+  
+}
+function timer(index){
+  console.log("clicked")
+  let duration = convertSeconds(player[index].duration);
+  songTime.innerHTML = `00:00 /${duration} `;
+  circle.style.left = `0%`;
+  bar.style.width = `0%`;
+  player[index].addEventListener("timeupdate", () => {
+    let current = convertSeconds(player[index].currentTime);
+  songTime.innerHTML = `${current} /${duration} `;
+  circle.style.left = `${(player[index].currentTime / player[index].duration)*100}%`;
+  bar.style.width = `${(player[index].currentTime / player[index].duration)*100}%`;
+  if (current == duration) {
+    pause.style.display = "none";
+    play.style.display = "block";
+    block = 1;
+  }
+});
 }
 function playe() {
     
@@ -119,6 +184,7 @@ function playe() {
       }
       else{
         song.pause();
+        song.currentTime = 0
       }
     })
 }
