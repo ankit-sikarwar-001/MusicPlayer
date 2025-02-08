@@ -1,22 +1,28 @@
-body{
-    background: black; 
+body {
+    background: black;
     color: white;
 }
-*{
+
+* {
     margin: 0;
     padding: 0;
 }
-nav{
-    max-width:100vw;
+
+nav {
+    max-width: 100vw;
     box-shadow: 1px 2px 5px gray;
     height: 8vh;
     box-sizing: border-box;
     padding: 5px;
     display: flex;
-    justify-content: space-between;
+    /* justify-content: space-between; */
 }
-ul{
-    font-family:sans-serif  ;
+nav>div{
+    display: none;
+}
+
+ul {
+    font-family: sans-serif;
     font-weight: 420;
     height: 100%;
     width: 45vw;
@@ -25,26 +31,31 @@ ul{
     display: flex;
     gap: 3vw;
 }
-ul>li,#listdiv img{
+
+ul>li,
+#listdiv img {
     list-style: none;
     cursor: pointer;
 }
-#listdiv{
+
+#listdiv {
     border: 2px solid black;
     border-radius: 40px;
     background: #252525;
     padding: 3px;
-    box-shadow: 1px 1px 3px gray,-1px -1px px gray;
+    box-shadow: 1px 1px 3px gray, -1px -1px px gray;
     padding-inline: 10px;
     display: flex;
     box-sizing: border-box;
     gap: 10px;
     align-items: center;
 }
-#listdiv>p{
+
+#listdiv>p {
     font-size: 30px;
     margin-bottom: 5px;
 }
+
 #listdiv>input,
 #listdiv>input:visited {
     color: white;
@@ -55,43 +66,58 @@ ul>li,#listdiv img{
     height: 25px;
     width: 20vw;
 }
-#listdiv:hover{
+
+#listdiv:hover {
     border: 2px solid rgb(56, 180, 143);
 }
-img{
+
+img {
     height: 25px;
 }
-li>img,#listdiv img,.library p img,.library img,i{
-filter: invert(54%) sepia(68%) saturate(499%) hue-rotate(110deg) brightness(99%) contrast(99%);
+
+li>img,
+#listdiv img,
+.library p img,
+.library img,
+i {
+    filter: invert(54%) sepia(68%) saturate(499%) hue-rotate(110deg) brightness(99%) contrast(99%);
     z-index: 1;
 }
-#sideul button:hover{
+
+#sideul button:hover {
     transform: scale(1.05);
     color: white;
     transition: all 200ms ease-in;
 }
-#sideul div li:hover,#sideul li:hover{
+
+#sideul div li:hover,
+#sideul li:hover {
     transform: scale(1.1);
     color: white;
     transition: all 200ms ease-in;
 }
-#sideul{
+
+#sideul {
     max-width: 35vw;
 }
-#sideul div{
+
+#sideul div {
     display: flex;
     gap: 1.2vw;
 }
-#sideul li{
+
+#sideul li {
     color: rgb(170, 167, 167);
 }
-#sideul div li{
+
+#sideul div li {
     list-style: none;
     cursor: pointer;
     font-weight: bold;
     color: rgb(170, 167, 167);
 }
-ul button{
+
+ul button {
     padding: 15px;
     width: 100px;
     background: rgb(69, 187, 151);
@@ -101,16 +127,17 @@ ul button{
     font-weight: bolder;
     cursor: pointer;
 }
-#Install{
+
+#Install {
     display: flex;
     align-items: center;
     gap: 0.5vw;
     color: rgb(170, 167, 167);
-    width:110px;
+    width: 110px;
 }
 
 /* left section starts  */
-.containor{
+.containor {
     max-width: 100vw;
     padding-top: 1.5vh;
     display: flex;
@@ -120,7 +147,7 @@ ul button{
     margin: auto;
 }
 
-.left{
+.left {
     resize: horizontal;
     overflow-x: auto;
     background: #252525;
@@ -128,40 +155,48 @@ ul button{
     font-family: sans-serif;
     width: 24vw;
 }
-.left div , .left{
+
+.left div,
+.left {
     padding: 1rem;
 }
 
 /* left section */
-.library p{
+.library p {
     display: flex;
     align-items: center;
-    gap:1vw;
+    gap: 1vw;
     color: rgb(170, 167, 167);
-    font-weight:bold;
+    font-weight: bold;
 }
-.library{
+
+.library {
     display: flex;
     justify-content: space-between;
     margin-bottom: 4vh;
 }
-#playlist{
+
+#playlist {
     display: grid;
     height: 40vh;
     grid-template-columns: 1fr;
-    overflow:auto;
+    overflow: auto;
     gap: 1vh;
     margin: 0;
     padding: 0;
 }
-#create,#podcast{
+
+#create,
+#podcast {
     border: 1px solid black;
     line-height: 2;
     border-radius: 10px;
     height: fit-content;
     background: #393939;
 }
-#create button,#podcast button{
+
+#create button,
+#podcast button {
     margin-top: 2vh;
     background: rgb(69, 187, 151);
     height: 4vh;
@@ -171,19 +206,23 @@ ul button{
     border-radius: 50px;
     padding: 5px;
 }
+
 #create button:hover,
-#podcast button:hover{
+#podcast button:hover {
     transform: scale(1.05);
     transition: transform 100ms ease-in;
 }
-#podcast button{
+
+#podcast button {
     width: 150px;
 }
-#create :nth-child(1),#podcast :nth-child(1){
+
+#create :nth-child(1),
+#podcast :nth-child(1) {
     font-weight: bold;
 }
 
-#footer{
+#footer {
     margin-top: 5vh;
     display: flex;
     padding: 10px;
@@ -192,27 +231,32 @@ ul button{
     line-height: 2;
     gap: 0.5vw;
 }
-#footer p{
+
+#footer p {
     width: 100%;
     display: flex;
     gap: 1.4vw;
 }
+
 #fp2 {
     width: 100%;
     display: flex;
     gap: 2vw;
 }
-a{
+
+a {
     text-decoration: none;
     color: rgb(170, 167, 167);
 }
-a:hover{
+
+a:hover {
     color: white;
     transform: scale(1.05);
     transition: all 100ms ease;
     text-decoration: underline;
 }
-#lang{
+
+#lang {
     display: flex;
     align-items: center;
     width: 100px;
@@ -225,7 +269,7 @@ a:hover{
 }
 
 /* right section starts here */
-.right{
+.right {
     position: relative;
     border-radius: 10px;
     padding: 1rem;
@@ -233,19 +277,22 @@ a:hover{
     width: 74vw;
     overflow-y: scroll;
 }
-.artistCard{
+
+.artistCard {
     width: 100%;
     margin: 0;
     padding: 0;
 }
-.topline{
-    
+
+.topline {
+
     display: flex;
     margin-bottom: .5rem;
     padding-inline: 1rem;
     align-items: center;
     justify-content: space-between;
 }
+
 #card1 div {
     border-radius: 50%;
     height: 140px;
@@ -259,33 +306,43 @@ a:hover{
     height: 100%;
     object-fit: contain;
 }
-#card1{
+
+#card1 {
     position: relative;
     padding: .5rem;
     border-radius: 10px;
     line-height: 1.3;
     font-size: 1rem;
 }
-#card1 :last-child,#scard1 :last-child{
+
+#card1 :last-child,
+#scard1 :last-child {
     font-size: 0.9rem;
     color: rgb(170, 167, 167);
 }
-#card1:hover,#scard1:hover{
+
+#card1:hover,
+#scard1:hover {
     background: linear-gradient(#252525, #2d2d2d);
     /* transition: all 20s ease-in; */
 }
-#para{
+
+#para {
     font-weight: bolder;
 }
-#para:hover{
+
+#para:hover {
     text-decoration: underline;
 }
-.topline>h2:hover,.topline p:hover{
+
+.topline>h2:hover,
+.topline p:hover {
     /* font-weight: bold; */
     cursor: pointer;
     text-decoration: underline;
 
 }
+
 #scard1 div {
     /* border-radius: 50%; */
     height: 120px;
@@ -293,6 +350,7 @@ a:hover{
     width: 120px;
     overflow: hidden;
 }
+
 #rcard1 div {
     border-radius: 10px;
     height: 120px;
@@ -306,10 +364,12 @@ a:hover{
     height: 100%;
     object-fit: contain;
 }
-.songlist,.artists {
+
+.songlist,
+.artists {
     width: 100%;
     display: grid;
-    grid-template-columns: repeat(7,1fr);
+    grid-template-columns: repeat(7, 1fr);
 }
 
 #scard1 {
@@ -319,7 +379,8 @@ a:hover{
     line-height: 1.3;
     font-size: 1rem;
 }
-#playbutton{
+
+#playbutton {
     width: 40px !important;
     height: 40px !important;
     border-radius: 50px;
@@ -333,13 +394,17 @@ a:hover{
     overflow: hidden;
     background: #0cf5ab;
 }
-#playbutton img{
+
+#playbutton img {
     width: 70%;
 }
-#scard1:hover #playbutton,#card1:hover #playbutton{
+
+#scard1:hover #playbutton,
+#card1:hover #playbutton {
     display: flex;
 }
-.player{
+
+.player {
     width: 70vw;
     height: 50px;
     background: #afe0d5;
@@ -350,31 +415,36 @@ a:hover{
     grid-template-rows: 1fr 1fr;
     position: fixed;
     top: 92vh;
-    right: 1.5vw; 
+    right: 1.5vw;
 }
-.controls{
+
+.controls {
     width: 100%;
     display: flex;
     height: 40px;
     justify-content: space-between;
     align-items: center;
 }
-.controls div{
+
+.controls div {
     width: 12%;
     height: 100%;
     display: flex;
 }
-i{
+
+i {
     justify-self: space-between;
     padding: 10px;
     cursor: pointer;
     font-size: 20px;
 }
-#pause{
+
+#pause {
     display: none;
     font-size: 20px;
 }
-.seekbar{
+
+.seekbar {
     cursor: pointer;
     position: relative;
     width: 95%;
@@ -383,25 +453,28 @@ i{
     margin: auto;
     background: white;
 }
-.color{
+
+.color {
     height: 100%;
     width: 0%;
-    transition: width 0.5s ;
+    transition: width 0.5s;
     background: #08e6a0;
     position: absolute;
     bottom: 0;
 }
-.circle{
+
+.circle {
     left: -2%;
-    height: 15px ;
-    width: 15px ;
+    height: 15px;
+    width: 15px;
     transition: left 0.5s;
     position: absolute;
     bottom: -5px;
     background: #08e6a0;
     border-radius: 50%;
 }
-.songInfo{
+
+.songInfo {
     font-size: large;
     width: 300px;
     height: 100%;
@@ -414,22 +487,135 @@ i{
     flex-wrap: nowrap;
     color: rgb(31, 31, 31);
 }
-.songTime{
+
+.songTime {
     display: flex;
     align-items: center;
     color: rgb(41, 41, 41);
 }
 
-@media screen and (max-width :1100px) {
-    .left{
+@media (min-width:800px) and (max-width :1100px) {
+    .left {
         position: relative;
         right: 70vw;
+        display: none;
     }
-    .right{
+
+    nav {
+        max-width: 100vw;
+        /* justify-self: unset; */
+        gap: 5vw;
+    }
+
+    .right {
+        overflow-x: hidden;
         width: 100vw;
     }
-    .player{
+
+    .artists,
+    .songlist {
+        overflow-x: auto;
+    }
+
+    .containor {
+        width: 100vw;
+        height: 100vh;
+    }
+
+    .player {
         width: 85vw;
         right: 7.5vw;
+    }
+
+    #listdiv {
+        display: none;
+    }
+
+}
+
+@media (max-width :500px) {
+    .left {
+        position: absolute;
+        left: 150vw;
+        width: 80%;
+        z-index: 1;
+        display: none;
+        transition: all 1s;
+    }
+    .containor{
+        /* position: relative; */
+    }
+
+    #sideul {
+        display: none;
+    }
+
+    nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+
+    .right {
+        position: relative;
+        z-index: 0;
+        /* margin-right: 60vw; */
+        overflow-x: hidden;
+        width: 100vw !important;
+    }
+
+    #bar,
+    nav ul li img,
+    #listdiv img {
+        height: 20px !important;
+        font-size: larger;
+    }
+
+    #listdiv {
+        box-sizing: border-box;
+        width: 100%;
+        height: 80%;
+    }
+    nav>div{
+        display: inline-block;
+        width: fit-content;
+        cursor: pointer;
+    }
+
+    #listdiv p {
+        margin-top: 2px;
+        align-self: center;
+        font-size: medium;
+    }
+
+    #listdiv input {
+        font-size: small;
+    }
+
+    .artists,
+    .songlist {
+        overflow-x: auto;
+    }
+
+    .containor {
+        width: 100vw;
+        height: 100vh;
+    }
+
+    .player {
+        height: 49px;
+        width: 85vw;
+        right: 5vw;
+    }
+    .topline{
+        margin-top: 10px;
+        font-size:small;
+    }
+
+    #card1 div,
+    #scard1 div {
+        height: 100px;
+        width: 100px;
     }
 }

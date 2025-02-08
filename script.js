@@ -11,6 +11,12 @@ let circle = document.querySelector(".circle");
 let bar = document.querySelector(".color");
 let seekbar =document.querySelector(".seekbar");
 let perComplete ;
+document.querySelector(".hamburger").addEventListener("click",()=>{
+  document.querySelector(".left").style.left =
+    document.querySelector(".left").style.left=="20vw"?"150vw":"20vw";
+  document.querySelector(".left").style.display =
+    document.querySelector(".left").style.display == "grid"?"none":"grid";
+})
 // convert secconds into minute
 function convertSeconds(seconds) {
   const minutes = Math.floor(seconds / 60);
