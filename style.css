@@ -464,7 +464,7 @@ i {
 }
 
 .circle {
-    left: -2%;
+    /* left: -1%; */
     height: 15px;
     width: 15px;
     transition: left 0.5s;
